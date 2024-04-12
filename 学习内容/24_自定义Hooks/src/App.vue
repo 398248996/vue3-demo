@@ -1,17 +1,20 @@
 <template>
   <div class="app">
-    <router-link to="/home">首页</router-link>
-    <router-link to="/person">人员</router-link>
-    <router-view></router-view>
+    <person v-if="isShow"/>
+    <button @click="changeShow">点我卸载组件</button>
   </div>
 </template>
 <!-- lang即language，使用的语言是ts-->
 <script lang="ts" setup name="App">
-import {RouterView,RouterLink} from 'vue-router'
+  import Person from "@/components/Person.vue";
+  import hooksShow from "@/hooks/isShow";
+
+  const {isShow,changeShow} = hooksShow()
+
 </script>
 
 <style>
-.app {
+.app{
   background: #ddd;
   box-shadow: 0 0 10px;
   border-radius: 20px;

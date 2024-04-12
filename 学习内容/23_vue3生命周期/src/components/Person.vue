@@ -1,6 +1,6 @@
 <template>
   <div class="person">
-    <button @click="delPerson">点我修改数据</button>
+    <button @click="changeData">点我修改数据</button>
     <ul v-if="isShow">
       <li v-for="person in list" :key="person.name">
         <h3>姓名：{{ person.name }}</h3>
@@ -26,14 +26,31 @@ vue3
 卸载：onBeforeUnmount(卸载前) onUnmounted(卸载完毕)
 */
 <script setup lang="ts" name="Person">
-import {onMounted} from 'vue';
-import hooksShow from "@/hooks/isShow";
-import hooksPerson from "@/hooks/person";
-
-const {isShow,changeShow} = hooksShow()
-const {list,delPerson}=hooksPerson()
+import {onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, ref} from 'vue';
+import {type PersonList} from "@/type/person";
+let isShow = ref(true)
+// 接受值+限制类型+默认值+必要性
+defineProps<{ list?: PersonList }>()
+function changeData(){
+  isShow.value = false
+}
+onBeforeMount(() => {
+  console.log('生命周期之——挂载前')
+})
 onMounted(() => {
   console.log('生命周期之——挂载完毕')
+})
+onBeforeUpdate(() => {
+  console.log('生命周期之——更新前')
+})
+onUpdated(() => {
+  console.log('生命周期之——更新完毕')
+})
+onBeforeUnmount(() => {
+  console.log('生命周期之——销毁前')
+})
+onUnmounted(() => {
+  console.log('生命周期之——销毁完毕')
 })
 </script>
 <style scoped>
