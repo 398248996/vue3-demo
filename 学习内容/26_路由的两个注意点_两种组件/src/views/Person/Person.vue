@@ -18,30 +18,23 @@
     </ul>
   </div>
 </template>
-/*
-vue3
-创建：setup
-挂载：onBeforeMount(挂载前) onMounted(挂载完毕)
-更新：onBeforeUpdate(更新前) onUpdated(更新完毕)
-卸载：onBeforeUnmount(卸载前) onUnmounted(卸载完毕)
-*/
 <script setup lang="ts" name="Person">
-import {onMounted} from 'vue';
 import hooksShow from "@/hooks/isShow";
 import hooksPerson from "@/hooks/person";
+import {onMounted,onUnmounted} from "vue";
 
 const {isShow,changeShow} = hooksShow()
 const {list,delPerson}=hooksPerson()
-onMounted(() => {
-  console.log('生命周期之——挂载完毕')
+onMounted(()=>{
+  console.log('挂载完毕')
+})
+onUnmounted(()=>{
+  console.log('卸载完毕')
 })
 </script>
 <style scoped>
 .person {
-  background-color: #367d6c;
-  border-radius: 20px;
-  box-shadow: 0 0 10px;
-  padding: 40px;
+  text-align: left;
 }
 
 button {

@@ -1,5 +1,5 @@
 <template>
-  <div class="vModel">
+  <div class="father">
     <!--    v-model 双向绑定-->
     <!--    <input type="text" v-model="test">-->
 
@@ -31,7 +31,7 @@
     </ul>
   </div>
 </template>
-<script setup lang="ts" name="vModel">
+<script setup lang="ts" name="Father">
 import {onUpdated, ref} from "vue";
 import TestInput from "@/components/TestInput.vue";
 import TestInput2 from '@/components/TestInput2.vue'
@@ -46,8 +46,11 @@ onUpdated(() => {
 })
 </script>
 
-<style scoped>
-.vModel {
 
+<style scoped>
+.father {
+  background-color: #dddddd;
+  padding: 20px;
+  border-radius: 10px;
 }
 </style>

@@ -1,15 +1,25 @@
-import {createMemoryHistory, createRouter} from "vue-router";
-import Home from '@/components/Home.vue';
-import Person from '@/components/Person.vue';
-
-const  router = createRouter({
-    history: createMemoryHistory(),
+import {createRouter, createWebHistory} from 'vue-router'
+import Props from '@/pages/01_props/Father.vue'
+import Event from '@/pages/02_custom-event/Father.vue'
+import Mitt from '@/pages/03_mitt/Father.vue'
+import Vmodel from '@/pages/04_v-model/Father.vue'
+const router = createRouter({
+    history: createWebHistory(),
     routes: [{
-        path: '/home',
-        component: Home
+        path: '/props',
+        component: Props
     }, {
-        path: '/person',
-        component: Person
+        path: '/event',
+        component: Event
+    }, {
+        path: '/mitt',
+        component: Mitt
+    }, {
+        path: '/vmodel',
+        component: Vmodel
+    },{
+        path: '/',
+        redirect: '/props'
     }
     ]
 })

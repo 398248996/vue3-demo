@@ -7,7 +7,7 @@
 
 // lang即language，使用的语言是ts
 <script lang="ts">
-  import Person from "@/components/Person.vue";
+  import Person from "@/views/Person/Person.vue";
   // export 暴露组件
   export default {
     name:'App', // 组件名

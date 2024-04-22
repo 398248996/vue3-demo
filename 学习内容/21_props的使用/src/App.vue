@@ -6,7 +6,7 @@
 </template>
 <!-- lang即language，使用的语言是ts-->
 <script lang="ts" setup name="App">
-  import Person from "@/components/Person.vue";
+  import Person from "@/views/Person/Person.vue";
 
   import {type PersonList} from "@/type/person";
   import {reactive} from "vue";
