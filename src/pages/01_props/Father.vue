@@ -4,14 +4,13 @@
     <h3>车型：{{ car }}</h3>
     <h3>获得儿子的玩具：{{ toy }}</h3>
     <Child :car="car" :sendToy="getToy"/>
-
-    <h3>
-      props方式<br>
-    父 ：通过引用组件的地方传递数据<br>
-    子 ：通过defineProps获取父数据、函数<br>
-    父 传 子 ：触发写在父，传递数据；<br>
-    子 传 父 ：触发写在子，传递函数；<br>
-    </h3>
+    <div style="color:red">
+    <h3>props方式</h3>
+    <h3>父 ：通过引用组件的地方传递数据</h3>
+    <h3>子 ：通过defineProps获取父数据、函数</h3>
+    <h3>父 传 子 ：触发写在父，传递数据；</h3>
+    <h3>子 传 父 ：触发写在子，传递函数；</h3>
+    </div>
   </div>
 
 </template>
