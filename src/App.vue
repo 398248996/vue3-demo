@@ -9,12 +9,15 @@
     <!-- 导航 -->
     <div class="navbar">
       <router-link to="/props" active-class="hover">01_prop</router-link>
-      <router-link to="/event">02_event</router-link>
-      <router-link to="/mitt">03_miit</router-link>
-      <router-link to="/vmodel">04_v-model</router-link>
-      <router-link to="/attrs">05_attrs</router-link>
-      <router-link to="/refsOrParent">06_$refs和$parent</router-link>
-      <router-link to="/injectOrProvide">07_inject和provide</router-link>
+      <router-link to="/event" active-class="hover">02_event</router-link>
+      <router-link to="/mitt" active-class="hover">03_miit</router-link>
+      <router-link to="/vmodel" active-class="hover">04_v-model</router-link>
+      <router-link to="/attrs" active-class="hover">05_attrs</router-link>
+      <router-link to="/refsOrParent" active-class="hover">06_$refs和$parent</router-link>
+      <router-link to="/injectOrProvide" active-class="hover">07_inject和provide</router-link>
+      <router-link to="/slotDefault" active-class="hover">08_slot默认插槽</router-link>
+      <router-link to="/slotName" active-class="hover">09_slot具名插槽</router-link>
+      <router-link to="/slotScope" active-class="hover">10_slot作用域插槽</router-link>
     </div>
 
     <!-- 内容 -->
@@ -76,7 +79,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar a.hover {
   background-color: #ccc;
 }
 

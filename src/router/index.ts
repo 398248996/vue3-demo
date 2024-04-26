@@ -6,6 +6,9 @@ import Vmodel from '@/pages/04_v-model/Father.vue'
 import Attrs from '@/pages/05_$attrs/Father.vue'
 import RefsOrParent from '@/pages/06_$refs和$parent/Father.vue'
 import InjectOrProvide from '@/pages/07_inject和provide/Father.vue'
+import SlotDefault from '@/pages/08_slot默认插槽/Father.vue'
+import SlotName from '@/pages/09_slot具名插槽/Father.vue'
+import SlotScope from '@/pages/10_slot作用域插槽/Father.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: [{
@@ -32,6 +35,15 @@ const router = createRouter({
     },{
         path: '/injectOrProvide',
         component: InjectOrProvide
+    },{
+        path: '/slotDefault',
+        component: SlotDefault
+    },{
+        path: '/slotName',
+        component: SlotName
+    },{
+        path: '/slotScope',
+        component: SlotScope
     }
     ]
 })
