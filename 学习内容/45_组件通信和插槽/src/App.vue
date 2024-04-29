@@ -6,41 +6,28 @@
 
   <!-- 主体布局 -->
   <div class="container">
+    <!-- 导航 -->
+    <div class="navbar">
+      <router-link to="/props" active-class="hover">01_prop</router-link>
+      <router-link to="/event" active-class="hover">02_event</router-link>
+      <router-link to="/mitt" active-class="hover">03_miit</router-link>
+      <router-link to="/vmodel" active-class="hover">04_v-model</router-link>
+      <router-link to="/attrs" active-class="hover">05_attrs</router-link>
+      <router-link to="/refsOrParent" active-class="hover">06_$refs和$parent</router-link>
+      <router-link to="/injectOrProvide" active-class="hover">07_inject和provide</router-link>
+      <router-link to="/slotDefault" active-class="hover">08_slot默认插槽</router-link>
+      <router-link to="/slotName" active-class="hover">09_slot具名插槽</router-link>
+      <router-link to="/slotScope" active-class="hover">10_slot作用域插槽</router-link>
+    </div>
+
     <!-- 内容 -->
     <div class="content">
-      <h2>readonly</h2>
-      <h3>整个对象都是只读数据</h3>
-      <h3> 姓名: {{rperson}}</h3>
-      <button @click="changeReadonlyName">修改姓名</button>
-      <button @click="changeReadonlyAll">修改全部</button>
-      <hr>
-      <h2>shallowReadonly</h2>
-      <h3>浅层只读，深层次的响应式对象可以修改，浅层的不可以修改</h3>
-      <h3> 姓名: {{srperson}}</h3>
-      <button @click="changeSReadonlyName">修改姓名</button>
-      <button @click="changeSReadonlyAll">修改全部</button>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 <script setup lang="ts" name="app">
-import {readonly, ref, shallowReadonly} from "vue";
-
-let rperson = readonly(ref({name:'Ref',age:22,child:{name:'Ref LL',age:1}}))
-
-function changeReadonlyName(){
-  rperson.value.child.name = 'ReadonlyRef1'
-}
-function changeReadonlyAll(){
-  rperson.value = {name:'ReadonlyRef2',age: 24,child: {name:'Ref LL',age:3}}
-}
-
-let srperson = shallowReadonly(ref({name:'Ref',age:22,child:{name:'Ref LL',age:1}}))
-function changeSReadonlyName(){
-  srperson.value.child.name = 'SReadonlyRef1'
-}
-function changeSReadonlyAll(){
-  srperson.value = {name:'SReadonlyRef2',age: 24,child: {name:'Ref ss',age:3}}
-}
+import {RouterLink, RouterView} from "vue-router";
 </script>
 <style scoped>
 /* 全局样式 */
